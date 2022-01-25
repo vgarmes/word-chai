@@ -1,6 +1,6 @@
 import { colors } from '../theme/colors';
 import { getBgColor } from '../utils/getBgColor';
-import { useAppContext } from '../context/app-context';
+//import { useAppContext } from '../context/app-context';
 
 interface Props {
   index: number;
@@ -8,7 +8,8 @@ interface Props {
   solved: boolean;
 }
 const Cell = ({ index, attempt, solved }: Props) => {
-  const { secret } = useAppContext();
+  //const { secret } = useAppContext();
+  const secret = 'pasta';
   let content: string;
   let hasLetter = attempt[index] !== undefined;
   let color = getBgColor(attempt, index, secret);
@@ -23,7 +24,7 @@ const Cell = ({ index, attempt, solved }: Props) => {
         <div
           className="front"
           style={{
-            backgroundColor: colors.black,
+            backgroundColor: 'var(--color-background)',
             borderColor: hasLetter ? colors.middlegrey : '',
           }}
         >

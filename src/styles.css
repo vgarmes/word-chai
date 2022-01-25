@@ -3,6 +3,7 @@
   --color-present: 201 180 88;
   --color-correct: 106 170 100;
   --color-background: 211 214 218;
+  --color-text: black;
   --key-bg: 211 214 218;
 }
 
@@ -14,7 +15,7 @@
 body,
 html {
   background: var(--color-background);
-  color: white;
+  color: var(--color-text);
   font-family: sans-serif;
   text-align: center;
   text-transform: uppercase;

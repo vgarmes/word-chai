@@ -4,12 +4,12 @@ import Cell from './components/Cell';
 import Grid from './components/Grid';
 
 export function App() {
+  const history = ['piano', 'patio'];
+  const currentAttempt = 'pizza';
   return (
-    <AppProvider>
-      <div id="screen">
-        <h1>Wordle</h1>
-        <Grid />
-      </div>
-    </AppProvider>
+    <div id="screen">
+      <h1>Wordle</h1>
+      <Grid history={history} currentAttempt={currentAttempt} />
+    </div>
   );
 }
