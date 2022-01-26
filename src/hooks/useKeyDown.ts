@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-export const useKeyDown = (handleKey) => {
+const useKeyDown = (handleKey) => {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.ctrlKey || e.metaKey || e.altKey) {
@@ -12,3 +12,5 @@ export const useKeyDown = (handleKey) => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   });
 };
+
+export default useKeyDown;
