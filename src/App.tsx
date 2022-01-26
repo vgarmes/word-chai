@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { useAppContext } from './context/app-context';
 import Grid from './components/Grid';
+import Keyboard from './components/Keyboard';
 import useKeyDown from './hooks/useKeyDown';
 import usePersistedHistory from './hooks/usePersistedHistory';
 import { calculateBestColors } from './utils/calculateBestColors';
@@ -62,6 +63,7 @@ export function App() {
     <div id="screen">
       <h1>Wordle</h1>
       <Grid history={history} currentAttempt={currentAttempt} />
+      <Keyboard bestColors={bestColors} onKey={handleKey} />
     </div>
   );
 }
