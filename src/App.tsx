@@ -14,8 +14,12 @@ export function App() {
   );
   const [currentAttempt, setCurrentAttempt] = useState('');
   const [bestColors, setBestColors] = useState(() => new Map());
+  const [gameOver, setGameOver] = useState(false);
 
   const handleKey = (key) => {
+    if (gameOver) {
+      return;
+    }
     if (history.length === 6) {
       return;
     }
@@ -38,6 +42,9 @@ export function App() {
       setHistory(newHistory);
       setCurrentAttempt('');
       waitForAnimation(newHistory);
+      if (currentAttempt === secret) {
+        setGameOver(true);
+      }
     } else if (letter === 'backspace') {
       setCurrentAttempt(currentAttempt.slice(0, currentAttempt.length - 1));
     } else if (/^[a-z]$/.test(letter)) {
