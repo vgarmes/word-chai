@@ -27,6 +27,13 @@ const KeyboardRow = ({ bestColors, letters, isLast, onKey }: Props) => {
       </Button>
     );
   }
+  if (isLast) {
+    buttons.push(
+      <Button onKey={onKey} key="backspace" buttonKey="Backspace">
+        Backspace
+      </Button>
+    );
+  }
   return <div>{buttons}</div>;
 };
 
