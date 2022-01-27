@@ -1,5 +1,5 @@
 function loadHistory(secret: string) {
-  let data;
+  let data: { secret: string; history: Array<string> };
   try {
     data = JSON.parse(localStorage.getItem('data'));
   } catch {}

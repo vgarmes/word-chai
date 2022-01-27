@@ -2,7 +2,7 @@ import { colors } from '../theme/colors';
 import { History } from '../types';
 import { getBgColor } from './getBgColor';
 
-function getBetterColor(a, b) {
+function getBetterColor(a: string, b: string) {
   if (a === colors.green || b === colors.green) {
     return colors.green;
   }
